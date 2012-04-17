@@ -1,3 +1,0 @@
-/*
- * MyShowcase Core Application v0.1.1
- */
