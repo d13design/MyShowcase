@@ -1,0 +1,24 @@
+body{
+	background-image:url("images/grid.gif");
+}
+
+#screenshots{
+	text-align:center;
+}
+
+#screenshots img{
+    margin:0px auto;
+}
+
+#details{
+	border-top:1px solid #ededed;
+	background-color:#fff;
+}
+
+#details h1{
+	font-size:54px;
+	margin:15px;
+}
+#details p{
+	margin:20px;
+}
