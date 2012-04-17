@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- these mapping resource paths must point to your hibernate template files (.hbm.xml),
+            this should be the classpath location (typically after the src directory) -->
+        <mapping resource="org/sakaiproject/myshowcase/dao/hbm/SampleItem.hbm.xml" />
+        <mapping resource="org/sakaiproject/myshowcase/dao/hbm/User.hbm.xml" />
+        <mapping resource="org/sakaiproject/myshowcase/dao/hbm/Reviewer.hbm.xml" />
+        <mapping resource="org/sakaiproject/myshowcase/dao/hbm/Artefact.hbm.xml" />
+        <mapping resource="org/sakaiproject/myshowcase/dao/hbm/ArtefactType.hbm.xml" />
+        <mapping resource="org/sakaiproject/myshowcase/dao/hbm/ArtefactDetail.hbm.xml" />
+        <mapping resource="org/sakaiproject/myshowcase/dao/hbm/Showcase.hbm.xml" />
+        <mapping resource="org/sakaiproject/myshowcase/dao/hbm/ShowcaseTheme.hbm.xml" />
+        <mapping resource="org/sakaiproject/myshowcase/dao/hbm/ShowcaseReviewer.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>

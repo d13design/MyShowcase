@@ -1,0 +1,321 @@
+<beans xmlns="http://www.springframework.org/schema/beans" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+ 
+    <!-- MyShowcase tool controllers -->
+    <bean id="myShowcaseHomeController" class="org.sakaiproject.myshowcase.controller.MyShowcaseHomeController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+     
+    <bean id="myShowcaseHomeControllerSSO" class="org.sakaiproject.myshowcase.controller.MyShowcaseHomeControllerSSO">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+       
+    <bean id="myShowcaseFileUpload" class="org.sakaiproject.myshowcase.servlet.MyShowcaseFileUploadServlet">
+         <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean> 
+    
+     <bean id="myShowcaseArtefactTypeListController" class="org.sakaiproject.myshowcase.tool.MyShowcaseArtefactTypeListController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+<!--  
+    <bean id="myShowcaseController" class="org.sakaiproject.myshowcase.tool.MyShowcaseController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+-->
+    <bean id="uRLController" class="org.sakaiproject.myshowcase.controller.MyShowcaseURLController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+
+    <bean id="fileUploadController" class="org.sakaiproject.myshowcase.controller.MyShowcaseFileUploadController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+
+    <bean id="rSSController" class="org.sakaiproject.myshowcase.controller.MyShowcaseRSSController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+
+    <bean id="flickrController" class="org.sakaiproject.myshowcase.controller.MyShowcaseFlickrController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+
+    <bean id="twitterController" class="org.sakaiproject.myshowcase.controller.MyShowcaseTwitterController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+    
+    <bean id="portfolioController" class="org.sakaiproject.myshowcase.controller.MyShowcasePortfolioController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+
+    <bean id="vLEController" class="org.sakaiproject.myshowcase.controller.MyShowcaseVLEController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+
+    <bean id="collectionOutcomeController" class="org.sakaiproject.myshowcase.controller.MyShowcaseCollectionOutcomeController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+    
+    <bean id="myShowcaseSaveArtefactController" class="org.sakaiproject.myshowcase.tool.MyShowcaseSaveArtefactController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+
+    <bean id="myShowcaseSaveArtefactFileController" class="org.sakaiproject.myshowcase.tool.MyShowcaseSaveArtefactFileController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+
+    <bean id="myShowcaseSaveArtefactRSSController" class="org.sakaiproject.myshowcase.tool.MyShowcaseSaveArtefactRSSController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+
+    <bean id="myShowcaseFlickrPhotosetController" class="org.sakaiproject.myshowcase.tool.MyShowcaseFlickrPhotosetController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+
+    <bean id="myShowcaseSaveArtefactFlickrController" class="org.sakaiproject.myshowcase.tool.MyShowcaseSaveArtefactFlickrController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+
+    <bean id="myShowcaseSaveArtefactTwitterController" class="org.sakaiproject.myshowcase.tool.MyShowcaseSaveArtefactTwitterController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+
+<!-- 
+
+    <bean id="myShowcaseFileUploadController" class="org.sakaiproject.myshowcase.tool.MyShowcaseFileUploadController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+ -->       
+ <!--       <property name="commandClass" value="org.sakaiproject.myshowcase.tool.FileUploadBean"/> --> 
+ <!--      <property name="formView" value="url"/>
+        <property name="successView" value="url"/>
+	</bean>
+ -->  
+    <bean id="myShowcaseArtefactListController" class="org.sakaiproject.myshowcase.tool.MyShowcaseArtefactListController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+
+    <bean id="myShowcaseGetAllTagsController" class="org.sakaiproject.myshowcase.tool.MyShowcaseGetAllTagsController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+
+    <bean id="myShowcaseGetTreeWSController" class="org.sakaiproject.myshowcase.tool.MyShowcaseGetTreeWSController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+
+    <bean id="myShowcaseGetCompetenciesForStudentWSController" class="org.sakaiproject.myshowcase.tool.MyShowcaseGetCompetenciesForStudentWSController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+   
+     
+     <bean id="myShowcaseArtefactRemoveController" class="org.sakaiproject.myshowcase.tool.MyShowcaseArtefactRemoveController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean> 
+        
+     <bean id="myShowcaseAddArtefactToShowcaseController" class="org.sakaiproject.myshowcase.tool.MyShowcaseAddArtefactToShowcaseController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>              
+
+     <bean id="myShowcaseDeleteArtefactFromShowcaseController" class="org.sakaiproject.myshowcase.tool.MyShowcaseDeleteArtefactFromShowcaseController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>              
+         
+     <bean id="myShowcaseEditArtefactController" class="org.sakaiproject.myshowcase.tool.MyShowcaseEditArtefactController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>             
+         
+     <bean id="myShowcaseShowcaseArtefactsCounterController" class="org.sakaiproject.myshowcase.tool.MyShowcaseShowcaseArtefactsCounterController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>  
+          
+     <bean id="myShowcaseGetArtefactTagsController" class="org.sakaiproject.myshowcase.tool.MyShowcaseGetArtefactTagsController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>           
+            
+     <bean id="myShowcaseUpdateArtefactTagsController" class="org.sakaiproject.myshowcase.tool.MyShowcaseUpdateArtefactTagsController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+             
+     <bean id="myShowcaseUpdateArtefactMappingsController" class="org.sakaiproject.myshowcase.tool.MyShowcaseUpdateArtefactMappingsController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+             
+     <bean id="myShowcaseMaintainTagSearchCountController" class="org.sakaiproject.myshowcase.tool.MyShowcaseMaintainTagSearchCountController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+             
+     <bean id="myShowcaseArtefactSearchController" class="org.sakaiproject.myshowcase.tool.MyShowcaseArtefactSearchController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+               
+     <bean id="myShowcaseBuildShowcaseController" class="org.sakaiproject.myshowcase.controller.MyShowcaseBuildShowcaseController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean> 
+ 
+    <bean id="myShowcaseShowcaseEvidenceListController" class="org.sakaiproject.myshowcase.tool.MyShowcaseShowcaseEvidenceListController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean> 
+ 
+ 
+    <bean id="myShowcaseShowcaseThemeListController" class="org.sakaiproject.myshowcase.tool.MyShowcaseShowcaseThemeListController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean> 
+
+
+	<bean id="myShowcaseShowcaseHistoryController" class="org.sakaiproject.myshowcase.controller.MyShowcaseShowcaseHistoryController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean> 
+ 
+    <bean id="myShowcaseShowcaseListController" class="org.sakaiproject.myshowcase.tool.MyShowcaseShowcaseListController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+ 
+ 
+    <bean id="myShowcaseShowcaseReviewersListController" class="org.sakaiproject.myshowcase.tool.MyShowcaseShowcaseReviewersListController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+  
+    <bean id="myShowcaseMaintainShowcaseReviewersController" class="org.sakaiproject.myshowcase.tool.MyShowcaseMaintainShowcaseReviewersController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+ 
+    <bean id="myShowcaseMaintainShowcaseController" class="org.sakaiproject.myshowcase.tool.MyShowcaseMaintainShowcaseController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+  
+    <bean id="myShowcaseGetShowcaseController" class="org.sakaiproject.myshowcase.tool.MyShowcaseGetShowcaseController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean> 
+   
+    <bean id="myShowcasePublishShowcaseController" class="org.sakaiproject.myshowcase.tool.MyShowcasePublishShowcaseController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean> 
+   
+    <bean id="myShowcaseClearEvidenceController" class="org.sakaiproject.myshowcase.tool.MyShowcaseClearEvidenceController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean> 
+    
+    <bean id="myShowcaseViewShowcaseController" class="org.sakaiproject.myshowcase.tool.MyShowcaseViewShowcaseController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>    
+     
+    <bean id="myShowcaseGetShowcaseEvidenceMappingsController" class="org.sakaiproject.myshowcase.tool.MyShowcaseGetShowcaseEvidenceMappingsController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean> 
+    
+      
+    <bean id="myShowcaseGetEvidenceArtefactMappingsController" class="org.sakaiproject.myshowcase.tool.MyShowcaseGetEvidenceArtefactMappingsController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>    
+ <!--   
+    <bean id="myShowcaseFileDownloadController" class="org.sakaiproject.myshowcase.tool.MyShowcaseFileDownloadController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>    
+  -->   
+    <bean id="myShowcaseGetArtefactController" class="org.sakaiproject.myshowcase.tool.MyShowcaseGetArtefactController">
+        <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+    
+    <bean id="myShowcaseValidateTemplateSelectionController" class="org.sakaiproject.myshowcase.tool.MyShowcaseValidateTemplateSelectionController">
+         <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+     
+    <bean id="myShowcaseLoginController" class="org.sakaiproject.myshowcase.controller.MyShowcaseLoginController">
+         <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+     
+    <bean id="myShowcaseRegistrationController" class="org.sakaiproject.myshowcase.controller.MyShowcaseRegistrationController">
+         <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>  
+    
+    <bean id="myShowcaseReviewShowcaseController" class="org.sakaiproject.myshowcase.tool.MyShowcaseReviewShowcaseController">
+         <property name="myshowcaseService" ref="myshowcase.logic.MyShowcaseService"/>
+    </bean>
+                                                  
+    <!-- Spring controller mappings -->
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <value>
+                /MyShowcaseHomeController.htm=myShowcaseHomeController
+                /SSO.htm=myShowcaseHomeControllerSSO
+                /flickr.htm=flickrController
+                /url.htm=uRLController
+                /fileupload.htm=fileUploadController
+                /rss.htm=rSSController
+                /twitter.htm=twitterController
+                /flickr.htm=flickrController
+                /vle.htm=vLEController
+                /portfolio.htm=portfolioController
+                /collectionOutcome.htm=collectionOutcomeController
+
+                /MyShowcaseArtefactTypeListController.json=myShowcaseArtefactTypeListController
+                /MyShowcaseArtefactListController.json=myShowcaseArtefactListController
+                /MyShowcaseArtefactRemoveController.json=myShowcaseArtefactRemoveController
+                /MyShowcaseAddArtefactToShowcaseController.json=myShowcaseAddArtefactToShowcaseController
+                /MyShowcaseDeleteArtefactFromShowcaseController.json=myShowcaseDeleteArtefactFromShowcaseController
+                /MyShowcaseEditArtefactController.json=myShowcaseEditArtefactController
+                /MyShowcaseShowcaseArtefactsCounterController.json=myShowcaseShowcaseArtefactsCounterController
+                /MyShowcaseGetAllTagsController.json=myShowcaseGetAllTagsController
+                /MyShowcaseGetArtefactTagsController.json=myShowcaseGetArtefactTagsController
+                /MyShowcaseUpdateArtefactTagsController.json=myShowcaseUpdateArtefactTagsController
+                /MyShowcaseUpdateArtefactMappingsController.json=myShowcaseUpdateArtefactMappingsController
+                /MyShowcaseMaintainTagSearchCountController.json=myShowcaseMaintainTagSearchCountController
+                /MyShowcaseSaveArtefacts.json=myShowcaseSaveArtefactController
+                /MyShowcaseSaveArtefactsFile.json=myShowcaseSaveArtefactFileController
+                /MyShowcaseSaveArtefactsRSS.json=myShowcaseSaveArtefactRSSController
+                /MyShowcaseFlickrPhotoset.json=myShowcaseFlickrPhotosetController
+                /MyShowcaseSaveArtefactsFlickr.json=myShowcaseSaveArtefactFlickrController
+                /MyShowcaseSaveArtefactsTwitter.json=myShowcaseSaveArtefactTwitterController
+ <!--              
+                /MyShowcaseFileUpload.json=myShowcaseFileUploadController
+                /MyShowcaseFileUpload.MyShowcaseFileUploadServlet=myShowcaseFileUpload
+                /MyShowcaseFileDownloadController.json=myShowcaseFileDownloadController
+   -->                
+                /MyShowcaseArtefactListController.json=myShowcaseArtefactListController
+                /MyShowcaseArtefactTypeListController.json=myShowcaseArtefactTypeListController
+                /MyShowcaseGetTreeWSController.json=myShowcaseGetTreeWSController
+                /MyShowcaseGetCompetenciesForStudentWSController.json=myShowcaseGetCompetenciesForStudentWSController
+                /MyShowcaseArtefactSearchController.json=myShowcaseArtefactSearchController
+                /MyShowcaseBuildShowcaseController.htm=myShowcaseBuildShowcaseController
+                /MyShowcaseShowcaseEvidenceListController.json=myShowcaseShowcaseEvidenceListController
+                /MyShowcaseShowcaseThemeListController.json=myShowcaseShowcaseThemeListController
+                /MyShowcaseShowcaseListController.json=myShowcaseShowcaseListController
+                /MyShowcaseShowcaseHistoryController.htm=myShowcaseShowcaseHistoryController
+                /MyShowcaseMaintainShowcaseReviewersController.json=myShowcaseMaintainShowcaseReviewersController
+                /MyShowcaseShowcaseReviewersListController.json=myShowcaseShowcaseReviewersListController
+                /MyShowcaseMaintainShowcaseController.json=myShowcaseMaintainShowcaseController
+                /MyShowcaseGetShowcaseController.json=myShowcaseGetShowcaseController
+                /MyShowcasePublishShowcaseController.json=myShowcasePublishShowcaseController
+                /MyShowcaseClearEvidenceController.json=myShowcaseClearEvidenceController
+                /MyShowcaseViewShowcaseController.htm=myShowcaseViewShowcaseController
+                /MyShowcaseGetShowcaseEvidenceMappingsController.json=myShowcaseGetShowcaseEvidenceMappingsController
+              	/MyShowcaseGetEvidenceArtefactMappingsController.json=myShowcaseGetEvidenceArtefactMappingsController
+              	
+              	
+              	
+                /MyShowcaseGetArtefactController.json=myShowcaseGetArtefactController
+                
+                /MyShowcaseValidateTemplateSelectionController.json=myShowcaseValidateTemplateSelectionController
+                /MyShowcaseLoginController.htm=myShowcaseLoginController
+                /login.htm=myShowcaseLoginController
+                /MyShowcaseRegistrationController.htm=myShowcaseRegistrationController
+                /review.htm=myShowcaseReviewShowcaseController
+                  
+               </value>
+        </property>
+    </bean>
+ 
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	</bean>   
+
+    <!-- Spring view mappings -->
+    
+    <bean id="viewResolver"
+        class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+        <property name="order" value="10"/>
+    </bean>
+    
+</beans>

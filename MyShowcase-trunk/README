@@ -1,0 +1,10 @@
+This is a sample Sakai webapp which demonstrates how to make a simple standalone webapp which works with sakai
+
+Build the app by running this command from the location of this README
+mvn clean install sakai:deploy
+(you need version 2.4 of sakai or better to run this in)
+
+Start Sakai and you will see the new app appear as a tool option
+
+-Aaron Zeckoski (azeckoski @ vt.edu)
+

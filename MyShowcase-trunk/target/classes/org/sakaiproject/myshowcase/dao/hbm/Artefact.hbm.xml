@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- put your value object in the class name, 
+		the table name is optional but you should specify it to avoid collisions -->
+		
+	<class name="org.sakaiproject.myshowcase.model.Artefact" table="MYSHOWCASE_ARTEFACT">
+
+		<!-- create the primary key id, using native is typically the best way -->
+		<id name="artefactId" type="long">
+			<column name="ARTEFACT_ID" />
+	    	<generator class="native">
+                <param name="sequence">MYSHOWCASE_ARTEFACT_ID_SEQ</param>
+	    	</generator>
+		</id>
+		
+		 <one-to-one name="artefactDetail" class="org.sakaiproject.myshowcase.model.ArtefactDetail">
+		 </one-to-one>
+		
+		<property name="name" type="string">
+			<column name="NAME" length="100"/>
+		</property>
+		
+		<property name="shortDesc" type="string">
+			<column name="SHORT_DESC" length="100"/>
+		</property>
+		
+		<property name="description" type="string">
+			<column name="DESCRIPTION" length="500"/>
+		</property>	
+			
+		<property name="locked" type="java.lang.Boolean">
+			<column name="LOCKED"/>
+		</property>
+		
+		<many-to-one name="owner" class="org.sakaiproject.myshowcase.model.Owner">
+            <column name="OWNER_ID" not-null="true" />
+        </many-to-one>        
+ 		
+		<many-to-one name="type" class="org.sakaiproject.myshowcase.model.ArtefactType">
+            <column name="ARTEFACT_TYPE_ID" not-null="true" />
+        </many-to-one>        
+        
+		<many-to-one name="showcase" class="org.sakaiproject.myshowcase.model.Showcase">
+            <column name="SHOWCASE_ID"/>
+        </many-to-one> 
+       
+        <set name="artefactTags" inverse="true" table="MYSHOWCASE_ARTEFACT_TAG">
+            <key>
+                <column name="ARTEFACT_ID" not-null="true" />
+            </key>
+            <one-to-many class="org.sakaiproject.myshowcase.model.ArtefactTag" />
+        </set> 
+                 		        	
+        <set name="artefactMappings" inverse="true" table="MYSHOWCASE_ARTEFACT_MAPPING">
+            <key>
+                <column name="ARTEFACT_ID" not-null="true" />
+            </key>
+            <one-to-many class="org.sakaiproject.myshowcase.model.ArtefactMapping" />
+        </set> 
+                 		        	
+		<property name="createdDate" type="java.util.Date">
+			<column name="CREATED_DATE" />
+		</property>
+       		        	
+		<property name="createdBy" type="string">
+			<column name="CREATED_BY"/>
+		</property>	 
+       		        	
+		<property name="updatedDate" type="java.util.Date">
+			<column name="UPDATED_DATE"/>
+		</property>
+       		        	
+		<property name="updatedBy" type="string">
+			<column name="UPDATED_BY"/>
+		</property>	 	
+			
+	</class>
+</hibernate-mapping>

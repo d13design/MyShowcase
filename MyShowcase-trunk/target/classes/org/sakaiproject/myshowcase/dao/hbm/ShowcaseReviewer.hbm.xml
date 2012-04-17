@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="org.sakaiproject.myshowcase.model.ShowcaseReviewer" table="MYSHOWCASE_SHOWCASE_REVIEWER">
+        <id name="showcaseReviewerId" type="long">
+            <column name="SHOWCASE_REVIEWER_ID" />
+            <generator class="native">
+                <param name="sequence">MYSHOWCASE_SHOWCASE_REVIEWER_ID_SEQ</param>
+	    	</generator>
+        </id>
+        
+        <many-to-one name="showcase" class="org.sakaiproject.myshowcase.model.Showcase">
+            <column name="SHOWCASE_ID" not-null="true" />
+        </many-to-one>
+        
+        <many-to-one name="reviewer" class="org.sakaiproject.myshowcase.model.Reviewer">
+            <column name="REVIEWER_ID" not-null="true" />
+        </many-to-one>
+        		        	
+		<property name="createdDate" type="java.util.Date">
+			<column name="CREATED_DATE" />
+		</property>
+       		        	
+		<property name="createdBy" type="string">
+			<column name="CREATED_BY"/>
+		</property>	 
+       		        	
+		<property name="updatedDate" type="java.util.Date">
+			<column name="UPDATED_DATE"/>
+		</property>
+       		        	
+		<property name="updatedBy" type="string">
+			<column name="UPDATED_BY"/>
+		</property>	 	  
+        
+		<property name="reviewedDate" type="java.util.Date">
+			<column name="REVIEWED_DATE"/>
+		</property>
+    </class>
+</hibernate-mapping>

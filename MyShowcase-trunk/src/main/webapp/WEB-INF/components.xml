@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+	"http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+    <!-- Bring in the hibernate related beans -->
+    
+    <import resource="spring-hibernate.xml" />
+	<import resource="myshowcase-hibernate.xml" />
+
+
+    <!-- pull in configurtaion properties from outside the war file -->	
+    
+	<bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location"><value>file:${catalina.home}/MyShowcase/myshowcase.properties</value></property>
+	</bean>
+
+		
+    <!-- create a logic bean, give it the DAO -->
+    
+    <bean id="myshowcase.logic.MyShowcaseService"
+        class="org.sakaiproject.myshowcase.logic.MyShowcaseService"
+        init-method="init">
+        <property name="dao" 
+            ref="myshowcase.dao.MyShowcaseDao" />
+         <property name="validationService" 
+            ref="myshowcase.logic.MyShowcaseValidationService" />           
+    </bean>
+
+ 
+    <!-- create a logic bean, give it the DAO -->
+    
+    <bean id="myshowcase.logic.MyShowcaseValidationService"
+        class="org.sakaiproject.myshowcase.logic.MyShowcaseValidationService"
+        init-method="init">
+    </bean>
+  
+	<bean class="org.springframework.web.context.support.ServletContextAttributeExporter">  
+    	<property name="attributes">  
+       	 	<map>  
+            	<entry key="MyShowcaseServiceInServletContext">  
+                	<ref bean="myshowcase.logic.MyShowcaseService"/>  
+       	 		</entry>
+       	 	</map>  
+    	</property>  
+	</bean>  
+
+</beans>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="org.sakaiproject.myshowcase.model.Reviewer" table="MYSHOWCASE_REVIEWER">
+        
+        <!-- create the primary key id, using native is typically the best way -->
+		<id name="reviewerId" type="long">
+			<column name="REVIEWER_ID" />
+	    	<generator class="native">
+                <param name="sequence">MYSHOWCASE_REVIEWER_ID_SEQ</param>
+	    	</generator>
+		</id>
+
+		<property name="name" type="string">
+            <column name="NAME" length="100" not-null="true"/>
+        </property>
+        
+        <property name="email" type="string">
+            <column name="EMAIL" length="100" not-null="true"/>
+        </property>
+		
+		<many-to-one name="owner" class="org.sakaiproject.myshowcase.model.Owner">
+            <column name="OWNER_ID" not-null="true" />
+        </many-to-one>
+       
+        <set name="showcaseReviewers" inverse="true" table="MYSHOWCASE_SHOWCASE_REVIEWER">
+            <key>
+                <column name="REVIEWER_ID" not-null="true" />
+            </key>
+            <one-to-many class="org.sakaiproject.myshowcase.model.ShowcaseReviewer" />
+        </set> 
+           		        	
+		<property name="createdDate" type="java.util.Date">
+			<column name="CREATED_DATE" />
+		</property>
+       		        	
+		<property name="createdBy" type="string">
+			<column name="CREATED_BY"/>
+		</property>	 
+       		        	
+		<property name="updatedDate" type="java.util.Date">
+			<column name="UPDATED_DATE"/>
+		</property>
+       		        	
+		<property name="updatedBy" type="string">
+			<column name="UPDATED_BY"/>
+		</property>	 	
+        
+ 	</class>
+</hibernate-mapping>

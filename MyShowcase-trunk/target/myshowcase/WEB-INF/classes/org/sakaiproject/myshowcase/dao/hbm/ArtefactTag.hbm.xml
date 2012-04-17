@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="org.sakaiproject.myshowcase.model.ArtefactTag" table="MYSHOWCASE_ARTEFACT_TAG">
+        <id name="artefactTagId" type="long">
+            <column name="ARTEFACT_TAG_ID" />
+            <generator class="native">
+                <param name="sequence">MYSHOWCASE_ARTEFACT_TAG_ID_SEQ</param>
+	    	</generator>
+        </id>
+        
+        <many-to-one name="artefact" class="org.sakaiproject.myshowcase.model.Artefact">
+            <column name="ARTEFACT_ID" not-null="true" />
+        </many-to-one>
+        
+        <many-to-one name="tag" class="org.sakaiproject.myshowcase.model.Tag">
+            <column name="TAG_ID" not-null="true" />
+        </many-to-one>
+        		        	
+		<property name="createdDate" type="java.util.Date">
+			<column name="CREATED_DATE" />
+		</property>
+       		        	
+		<property name="createdBy" type="string">
+			<column name="CREATED_BY"/>
+		</property>	 
+       		        	
+		<property name="updatedDate" type="java.util.Date">
+			<column name="UPDATED_DATE"/>
+		</property>
+       		        	
+		<property name="updatedBy" type="string">
+			<column name="UPDATED_BY"/>
+		</property>	 	  
+        
+    </class>
+</hibernate-mapping>
