@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+	<ShowcaseReview>
+		<BaseUrl>review.htm?</BaseUrl>
+	</ShowcaseReview>
+
+	<FileUpload>
+		<HomeDir>ownerId</HomeDir>
+	</FileUpload>
+	
+	<Flickr>
+		<Key>9a3a6765af1c14f7d512d96fd3b62135</Key>
+		<Secret>e193a29315ee3f8f</Secret>
+	</Flickr>
+
+</Configuration>

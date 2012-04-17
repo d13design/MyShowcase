@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- put your value object in the class name, 
+		the table name is optional but you should specify it to avoid collisions -->
+		
+	<class name="org.sakaiproject.myshowcase.model.Account" table="MYSHOWCASE_ACCOUNT">
+
+		<!-- create the primary key id, using native is typically the best way -->
+		<id name="accountId" type="long">
+			<column name="ACCOUNT_ID" />
+	    	<generator class="native">
+                <param name="sequence">MYSHOWCASE_ACCOUNT_ID_SEQ</param>
+	    	</generator>
+		</id>
+		
+		<property name="userId" type="string">
+			<column name="USER_ID" length="100"/>
+		</property>
+ 		
+		<many-to-one name="accountSource" class="org.sakaiproject.myshowcase.model.AccountSource">
+            <column name="ACCOUNT_SOURCE_ID"/>
+        </many-to-one>
+           			
+		<many-to-one name="owner" class="org.sakaiproject.myshowcase.model.Owner">
+            <column name="OWNER_ID" not-null="true" />
+        </many-to-one>        
+                  		        	
+		<property name="createdDate" type="java.util.Date">
+			<column name="CREATED_DATE" />
+		</property>
+       		        	
+		<property name="createdBy" type="string">
+			<column name="CREATED_BY"/>
+		</property>	 
+       		        	
+		<property name="updatedDate" type="java.util.Date">
+			<column name="UPDATED_DATE"/>
+		</property>
+       		        	
+		<property name="updatedBy" type="string">
+			<column name="UPDATED_BY"/>
+		</property>	 	
+			
+	</class>
+</hibernate-mapping>
